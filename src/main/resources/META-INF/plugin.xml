@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>manuh.graphzeal</id>
+    <name>GraphZeal</name>
+    <vendor email="dummy" url="dummy">LishaBora</vendor>
+
+    <description><![CDATA[
+    A plugin that makes the appolo graphql usage in android studio easy.<br>
+    <em>made for GraphQL lovers</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="MyPlugin.SampleMenu" text="_GraphZeal" description="GraphZeal menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+
+            <action id="Myplugin.Textboxes" class="UrlSchemaGenerator" text="_Enter URL" description="Says hello"/>
+
+            <action id="SchemaFileChooser" class="SchemaFileChooser" text="_Upload Schema File"
+                    description="Chooses the Schema.json file">
+                <add-to-group group-id="FileChooser" anchor="first"/>
+            </action>
+        </group>
+
+    </actions>
+</idea-plugin>

@@ -1,0 +1,1 @@
+/home/manuh/IdeaProjects/graphzeal/build/classes/java/main/SchemaFileChooser.class:/home/manuh/IdeaProjects/graphzeal/build/classes/java/main/UrlSchemaGenerator.class
