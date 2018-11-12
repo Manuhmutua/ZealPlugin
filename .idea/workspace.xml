@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42ffc4bd-1e2a-48ef-9660-7c56fef5a1c0" name="Default Changelist" comment="" />
+    <list default="true" id="42ffc4bd-1e2a-48ef-9660-7c56fef5a1c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/0089c31c-e103-4977-a3dd-8b1179463f5b.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/07ebd616-bcf0-46a3-999f-913b2be12482.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/086669df-9527-4750-b6a2-1ed86fae318a.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/086669df-9527-4750-b6a2-1ed86fae318a.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/1b9601d8-6413-4d85-aaa1-9b06fc1778ac.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/2722cf40-1257-43ba-aa7a-385294746a4f.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/3bcb0e03-0e9a-4026-928e-73c2431c56ee.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/8e6c1e81-c83b-4f2f-a0b0-704737ed5c5d.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/a7282b3b-cc06-4d07-be13-059f7248beeb.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/b0e7c5c9-712c-415a-9a5e-181455974687.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/f340d87d-156e-4692-8456-9e1522615990.log" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -51,9 +63,11 @@
     <session id="349405342">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.55" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/UrlSchemaGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="165">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,8 +130,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SchemaFileChooser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+            <state relative-caret-position="72">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -638,7 +652,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="7" />
     <option name="y" value="30" />
     <option name="width" value="1346" />
@@ -720,7 +734,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540799550708" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540799659631" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -794,17 +808,18 @@
       <option name="presentableId" value="Default" />
       <updated>1540626518433</updated>
       <workItem from="1540626521028" duration="18809000" />
-      <workItem from="1540798083473" duration="1394000" />
+      <workItem from="1540798083473" duration="1722000" />
+      <workItem from="1542037405166" duration="975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20203000" />
+    <option name="totallyTimeSpent" value="21506000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="30" width="1346" height="698" extended-state="1" />
+    <frame x="7" y="30" width="1346" height="698" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20153846" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20461538" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -814,13 +829,13 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37108013" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5357766" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3292683" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32984293" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3292683" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
@@ -857,8 +872,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/UrlSchemaGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="165">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -867,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SchemaFileChooser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+        <state relative-caret-position="72">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -58,3 +58,4 @@
 {"session":"499a86e6604a","build":"182.4505.22","bucket":"-1","time":1540799043667,"group":{"id":"actions","version":"2"},"event":{"count":1,"data":{},"id":"third.party.plugin.action"}}
 {"session":"499a86e6604a","build":"182.4505.22","bucket":"-1","time":1540799043676,"group":{"id":"ui.dialogs","version":"2"},"event":{"count":1,"data":{"type":"show"},"id":"com.intellij.openapi.fileChooser.ex.FileChooserDialogImpl"}}
 {"session":"499a86e6604a","build":"182.4505.22","bucket":"-1","time":1540799046008,"group":{"id":"ui.dialogs","version":"2"},"event":{"count":1,"data":{"code":1,"type":"close"},"id":"com.intellij.openapi.fileChooser.ex.FileChooserDialogImpl"}}
+{"session":"499a86e6604a","build":"182.4505.22","bucket":"-1","time":1540799046039,"group":{"id":"ui.dialogs","version":"2"},"event":{"count":1,"data":{"type":"show"},"id":"com.intellij.openapi.ui.messages.MessageDialog"}}
