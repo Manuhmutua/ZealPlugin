@@ -34,6 +34,12 @@
 .idea/modules
 .idea/**/*.iml
 
+.gradle/4.8/fileHashes/fileHashes.bin
+.gradle/4.8/fileHashes/fileHashes.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.idea/modules.xml
+.idea/modules/graphzeal_main.iml
+.idea/modules/graphzeal_test.iml
 
 # CMake
 cmake-build-*/
