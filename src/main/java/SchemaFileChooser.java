@@ -28,7 +28,18 @@ public class SchemaFileChooser extends AnAction {
             Messages.showInfoMessage("Cancel ", "Error");
 
         } else {
+            String projectPath = project.getBasePath();
+            String filePath = file.getPath();
+
             ArrayList<String> cmds = new ArrayList<>();
+            cmds.add("cd " + projectPath + "/src/main");
+            cmds.add("mkdir graphql");
+            cmds.add("cd");
+            cmds.add("cd " + projectPath + "/src/main/graphql");
+            cmds.add("mkdir " + project.getName());
+            cmds.add("cd");
+            cmds.add("cd " + projectPath + "/src/main/graphql" + project.getName());
+            cmds.add("");
             cmds.add("./gradlew");
 
             GeneralCommandLine generalCommandLine = new GeneralCommandLine(cmds);
@@ -42,8 +53,8 @@ public class SchemaFileChooser extends AnAction {
             }
             assert processHandler != null;
             processHandler.startNotify();
-            String txt = file.getPath();
-            Messages.showInfoMessage(txt, "File Name");
+
+            Messages.showInfoMessage(filePath, "File Name");
         }
 
 
