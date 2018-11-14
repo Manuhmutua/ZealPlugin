@@ -23,14 +23,31 @@
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+.gradle/
 
 # Gradle and Maven with auto-import
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+.idea/**/*.iml
+
+.gradle/4.8/fileHashes/fileHashes.bin
+.gradle/4.8/fileHashes/fileHashes.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.idea/modules.xml
+.idea/modules/graphzeal_main.iml
+.idea/modules/graphzeal_test.iml
+.gradle/4.8/fileContent/fileContent.lock
+
+.gradle/4.8/fileHashes/fileHashes.bin
+.gradle/4.8/fileHashes/fileHashes.lock
+.gradle/4.8/taskHistory/taskHistory.bin
+.gradle/4.8/taskHistory/taskHistory.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/buildOutputCleanup/outputFiles.bin
 
 # CMake
 cmake-build-*/
