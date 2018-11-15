@@ -14,6 +14,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <toolWindow id="GraphZeal" secondary="true" anchor="right"
+                    factoryClass="myToolWindow.MyToolWindowFactory"/>
     </extensions>
 
     <actions>
