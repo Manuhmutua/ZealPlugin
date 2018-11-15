@@ -1,8 +1,12 @@
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -19,8 +23,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class UrlSchemaGenerator extends AnAction {
-
-    private String[] packageNameAsArray;
 
     public UrlSchemaGenerator() {
         super("Hello");
@@ -76,6 +78,7 @@ public class UrlSchemaGenerator extends AnAction {
     }
 
     public void createGraphQlPackage(Project project, String graphQlUrl, String[] packageName) {
+
         ArrayList<String[]> cmds = new ArrayList<>();
 
         if (!directoryExists(combineDirectoryPath(project.getBasePath(), "app"))) {
@@ -99,20 +102,53 @@ public class UrlSchemaGenerator extends AnAction {
         cmds.add(new String[]{"mkdir", combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2])});
         cmds.add(new String[]{"mkdir", combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2], "graphql")});
 
-        try {
-            for (String[] command : cmds) {
-                new ProcessBuilder(command).start().waitFor();
+        createPackages(project, cmds, () -> downloadSchemaJson(project, packageName, graphQlUrl));
+
+    }
+
+    public void createPackages(Project project, ArrayList<String[]> cmds, PackageCreationCompleteListener packageCreationCompleteListener) {
+        ProgressManager.getInstance().run(new Task.Backgroundable(project, "Creating packages...") {
+            @Override
+            public void run(@NotNull ProgressIndicator progressIndicator) {
+                progressIndicator.setText("Creating package...");
+                progressIndicator.setFraction(0.2);
+
+                try {
+                    for (String[] command : cmds) {
+                        new ProcessBuilder(command).start().waitFor();
+                        progressIndicator.setFraction(progressIndicator.getFraction() + 0.2);
+                    }
+                    packageCreationCompleteListener.onComplete();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }
+        });
+    }
 
-            ProcessBuilder processBuilder = new ProcessBuilder();
-            processBuilder = processBuilder.directory(new File(combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2], "graphql")));
-            processBuilder.command(new String[]{"apollo", "schema:download", "--endpoint", graphQlUrl}).start().waitFor();
+    public void downloadSchemaJson(Project project, String[] packageName, String graphQlUrl){
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        ProgressManager.getInstance().run(new Task.Backgroundable(project, "Creating packages...") {
+            @Override
+            public void run(@NotNull ProgressIndicator progressIndicator) {
+                progressIndicator.setText("Downloading schema.json...");
+                progressIndicator.setText("Downloading schema.json");
+                progressIndicator.setIndeterminate(true);
+
+                try {
+                    ProcessBuilder processBuilder = new ProcessBuilder();
+                    processBuilder = processBuilder.directory(new File(combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2], "graphql")));
+                    processBuilder.command(new String[]{"apollo", "schema:download", "--endpoint", graphQlUrl}).start().waitFor();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     public boolean directoryExists(String path) {
@@ -128,5 +164,9 @@ public class UrlSchemaGenerator extends AnAction {
 
     public void throwDirectoryMissingError(String directoryName) {
         Messages.showErrorDialog(String.format("Unable to find directory %s", directoryName), "Error");
+    }
+
+    interface PackageCreationCompleteListener {
+        void onComplete();
     }
 }
