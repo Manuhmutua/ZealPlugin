@@ -129,7 +129,7 @@ public class UrlSchemaGenerator extends AnAction {
         });
     }
 
-    public void downloadSchemaJson(Project project, String[] packageName, String graphQlUrl){
+    public void downloadSchemaJson(Project project, String[] packageName, String graphQlUrl) {
 
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Creating packages...") {
             @Override

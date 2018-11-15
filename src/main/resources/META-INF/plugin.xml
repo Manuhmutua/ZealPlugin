@@ -14,16 +14,23 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <toolWindow id="GraphZeal" secondary="true" anchor="right"
+                    factoryClass="myToolWindow.MyToolWindowFactory"/>
     </extensions>
 
     <actions>
-        <group id="MyPlugin.SampleMenu" text="_GraphZeal" description="GraphZeal menu">
-            <add-to-group group-id="MainMenu" anchor="last"/>
+        <group id="org.jetbrains.tutorials.actions.GroupedActions" text="_GraphZeal" description="GraphZeal menu"
+               popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
 
-            <action id="Myplugin.Textboxes" class="UrlSchemaGenerator" text="_Enter URL" description="Says hello"/>
+            <action id="Myplugin.Textboxes" class="UrlSchemaGenerator" text="_Enter URL"
+                    description="Insert GraphQl URL">
+                <keyboard-shortcut first-keystroke="control alt G" second-keystroke="U" keymap="$default"/>
+            </action>
 
             <action id="SchemaFileChooser" class="SchemaFileChooser" text="_Upload Schema File"
                     description="Chooses the Schema.json file">
+                <keyboard-shortcut first-keystroke="control alt G" second-keystroke="S" keymap="$default"/>
                 <add-to-group group-id="FileChooser" anchor="first"/>
             </action>
         </group>
