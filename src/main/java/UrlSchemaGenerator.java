@@ -1,8 +1,12 @@
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,17 +29,18 @@ public class UrlSchemaGenerator extends AnAction {
 
         String graphQlUrl = Messages.showInputDialog(project, "Enter target GraphQl server URL", "Enter Server URL", Messages.getQuestionIcon());
 
-        if(graphQlUrl != null && !graphQlUrl.startsWith("http")){
+        if (graphQlUrl != null && !graphQlUrl.startsWith("http")) {
             Messages.showErrorDialog("The URL provided should start with \"http://\" or \"https://\"", "Invalid URL");
             return;
         }
 
-        if(graphQlUrl != null) {
+        if (graphQlUrl != null) {
             createGraphQlPackage(project, graphQlUrl);
         }
     }
 
     public void createGraphQlPackage(Project project, String graphQlUrl) {
+
         ArrayList<String[]> cmds = new ArrayList<>();
 
         if (!directoryExists(combineDirectoryPath(project.getBasePath(), "app"))) {
