@@ -142,6 +142,7 @@ public class UrlSchemaGenerator extends AnAction {
                     ProcessBuilder processBuilder = new ProcessBuilder();
                     processBuilder = processBuilder.directory(new File(combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2], "graphql")));
                     processBuilder.command(new String[]{"apollo", "schema:download", "--endpoint", graphQlUrl}).start().waitFor();
+                    project.getBaseDir().refresh(false,true);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
