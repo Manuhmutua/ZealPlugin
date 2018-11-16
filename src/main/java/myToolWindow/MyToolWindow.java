@@ -6,13 +6,15 @@ import javax.swing.*;
 
 public class MyToolWindow {
     private JPanel myToolWindowContent;
-    private JTextPane graphZealIsAnAndroidTextPane;
 
     public MyToolWindow(ToolWindow toolWindow) {
+        toolWindow.setTitle("GraphZeal");
     }
 
     public JPanel getContent() {
         return myToolWindowContent;
     }
 
+    private void createUIComponents() {
+    }
 }

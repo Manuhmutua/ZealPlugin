@@ -1,10 +1,10 @@
 <idea-plugin>
     <id>manuh.graphzeal</id>
     <name>GraphZeal</name>
-    <vendor email="dummy" url="dummy">LishaBora</vendor>
+    <vendor email="manuh.mutuah@gmail.com" url="dummy">GraphZeal</vendor>
 
     <description><![CDATA[
-    A plugin that makes the appolo graphql usage in android studio easy.<br>
+    A plugin that makes the appolo graphql usage in android studio easy. Sets up all the folders needed for usage and generates the schema .JSON file<br>
     <em>made for GraphQL lovers</em>
     ]]></description>
 

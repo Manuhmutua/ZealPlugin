@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="myToolWindow.MyToolWindow">
-  <grid id="27dc6" binding="myToolWindowContent" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="myToolWindowContent" custom-create="true" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="1022" height="100"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="c1eaa" class="javax.swing.JTextPane" binding="graphZealIsAnAndroidTextPane" default-binding="true">
+      <component id="9dd4" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="156"/>
-          </grid>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <margin top="20" left="10" bottom="0" right="10"/>
-          <text value="GraphZeal is an Android Studio plugin to helps to automate creation of graphql package and download the `schema.json` file. We are hopeful that we will be able to automate every step. "/>
+          <text value="GraphZeal"/>
+        </properties>
+      </component>
+      <component id="c72ce" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="GraphZeal is a plugin that helps set up GraphQl on your android studio project. It creates all the necessary folders and generates the GraphQl schema file from your GraphQl endpoint. "/>
+          <verticalAlignment value="1"/>
         </properties>
       </component>
     </children>
