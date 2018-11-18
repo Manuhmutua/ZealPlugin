@@ -7,11 +7,11 @@ import javax.swing.*;
 public class MyToolWindow {
     private JPanel myToolWindowContent;
 
-    public MyToolWindow(ToolWindow toolWindow) {
+    MyToolWindow(ToolWindow toolWindow) {
         toolWindow.setTitle("GraphZeal");
     }
 
-    public JPanel getContent() {
+    JPanel getContent() {
         return myToolWindowContent;
     }
 

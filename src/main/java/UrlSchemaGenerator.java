@@ -31,6 +31,7 @@ public class UrlSchemaGenerator extends AnAction {
     public void actionPerformed(AnActionEvent event) {
         Project project = event.getData(PlatformDataKeys.PROJECT);
 
+        assert project != null;
         if (project.getBasePath() == null) {
             Messages.showErrorDialog("Unable to find project", "Error");
             return;
@@ -51,7 +52,7 @@ public class UrlSchemaGenerator extends AnAction {
         }
     }
 
-    public String readAndroidPackage(String basePath) {
+    private String readAndroidPackage(String basePath) {
         try {
             File fXmlFile = new File(basePath + "/app/src/main/AndroidManifest.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -65,19 +66,13 @@ public class UrlSchemaGenerator extends AnAction {
             String packageName = eElement.getAttribute("package");
             System.out.println("Package name : " + packageName);
             return packageName;
-        } catch (SAXException saxexception) {
+        } catch (SAXException | IOException | ParserConfigurationException saxexception) {
             saxexception.printStackTrace();
-            return null;
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-            return null;
-        } catch (ParserConfigurationException parserConfigurationException) {
-            parserConfigurationException.printStackTrace();
             return null;
         }
     }
 
-    public void createGraphQlPackage(Project project, String graphQlUrl, String[] packageName) {
+    private void createGraphQlPackage(Project project, String graphQlUrl, String[] packageName) {
 
         ArrayList<String[]> cmds = new ArrayList<>();
 
@@ -106,7 +101,7 @@ public class UrlSchemaGenerator extends AnAction {
 
     }
 
-    public void createPackages(Project project, ArrayList<String[]> cmds, PackageCreationCompleteListener packageCreationCompleteListener) {
+    private void createPackages(Project project, ArrayList<String[]> cmds, PackageCreationCompleteListener packageCreationCompleteListener) {
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Creating packages...") {
             @Override
             public void run(@NotNull ProgressIndicator progressIndicator) {
@@ -119,9 +114,7 @@ public class UrlSchemaGenerator extends AnAction {
                         progressIndicator.setFraction(progressIndicator.getFraction() + 0.2);
                     }
                     packageCreationCompleteListener.onComplete();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
+                } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
 
@@ -129,7 +122,7 @@ public class UrlSchemaGenerator extends AnAction {
         });
     }
 
-    public void downloadSchemaJson(Project project, String[] packageName, String graphQlUrl) {
+    private void downloadSchemaJson(Project project, String[] packageName, String graphQlUrl) {
 
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Creating packages...") {
             @Override
@@ -143,27 +136,25 @@ public class UrlSchemaGenerator extends AnAction {
                     processBuilder = processBuilder.directory(new File(combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2], "graphql")));
                     processBuilder.command(new String[]{"apollo", "schema:download", "--endpoint", graphQlUrl}).start().waitFor();
                     project.getBaseDir().refresh(false,true);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
+                } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         });
     }
 
-    public boolean directoryExists(String path) {
+    private boolean directoryExists(String path) {
         File dir = new File(path);
         return dir.exists();
     }
 
-    public String combineDirectoryPath(String parent, String... paths) {
+    private String combineDirectoryPath(String parent, String... paths) {
         Path resolvedPath = Paths.get(parent, paths);
         assert resolvedPath != null;
         return resolvedPath.toString();
     }
 
-    public void throwDirectoryMissingError(String directoryName) {
+    private void throwDirectoryMissingError(String directoryName) {
         Messages.showErrorDialog(String.format("Unable to find directory %s", directoryName), "Error");
     }
 
