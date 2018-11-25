@@ -5,6 +5,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.71'
 }
 
+apply plugin: 'org.jetbrains.intellij'
 
 intellij {
     version '15.0.1'
@@ -36,11 +37,11 @@ compileTestKotlin {
 intellij {
     version '2018.2.4'
 }
-//
-//publishPlugin {
-//    username intellijPublishUsername
-//    password intellijPublishPassword
-//}
+
+publishPlugin {
+    username intellijPublishUsername
+    password intellijPublishPassword
+}
 patchPluginXml {
     changeNotes """
       This Plugin is not Perfect -> it works but refer the readme for proper usage.<br>

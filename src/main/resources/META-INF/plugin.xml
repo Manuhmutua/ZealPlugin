@@ -1,7 +1,8 @@
 <idea-plugin>
-    <id>manuh.graphzeal</id>
+    <id>com.androidstudy.graphzeal</id>
     <name>GraphZeal</name>
-    <vendor email="manuh.mutuah@gmail.com" url="dummy">GraphZeal</vendor>
+    <version>1.0</version>
+    <vendor email="allanjuma@gmail.com" url="dummy">GraphZeal</vendor>
 
     <description><![CDATA[
     A plugin that makes the appolo graphql usage in android studio easy. Sets up all the folders needed for usage and generates the schema .JSON file<br>
@@ -11,6 +12,8 @@
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.java</depends>
+
+    <idea-version since-build="123.72"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
