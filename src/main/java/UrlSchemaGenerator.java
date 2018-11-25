@@ -48,6 +48,7 @@ public class UrlSchemaGenerator extends AnAction {
         System.out.println("Package Name - " + packageName);
 
         if (graphQlUrl != null) {
+            assert packageName != null;
             createGraphQlPackage(project, graphQlUrl, packageName.split("\\."));
         }
     }
