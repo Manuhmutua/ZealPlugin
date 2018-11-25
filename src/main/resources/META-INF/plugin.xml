@@ -1,7 +1,8 @@
 <idea-plugin>
     <id>manuh.graphzeal</id>
     <name>GraphZeal</name>
-    <vendor email="manuh.mutuah@gmail.com" url="dummy">GraphZeal</vendor>
+    <vendor email="manuh.mutuah@gmail.com">GraphZeal</vendor>
+    <idea-version since-build="94.539"/>
 
     <description><![CDATA[
     A plugin that makes the appolo graphql usage in android studio easy. Sets up all the folders needed for usage and generates the schema .JSON file<br>
