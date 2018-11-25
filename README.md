@@ -9,7 +9,7 @@ This is a simple Android Studio and Intellij plugin that allows easy setup of [G
 These instructions will help you install the GraphZeal Plugin on your Android Studio or IntelliJ without a sweat!
 
 ## Contributing
-I am glad you’re interested in GraphZeal, and we’d love to see where you take it. If you would like to contribute code to this project you can do so through GitHub by Forking the Repository and creating a Pull Request.
+We are glad you’re interested in GraphZeal, and we’d love to see where you take it. If you would like to contribute code to this project you can do so through GitHub by Forking the Repository and creating a Pull Request.
 
 When submitting code, please make every effort to follow existing conventions and style in order to keep the code as readable as possible. We look forward to you submitting a Pull Request.
 
