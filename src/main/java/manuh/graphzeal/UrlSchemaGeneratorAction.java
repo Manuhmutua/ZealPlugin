@@ -1,3 +1,5 @@
+package manuh.graphzeal;
+
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -22,13 +24,20 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class UrlSchemaGenerator extends AnAction {
+public class UrlSchemaGeneratorAction extends AnAction {
 
-    public UrlSchemaGenerator() {
+
+    public UrlSchemaGeneratorAction() {
         super("Hello");
     }
 
+    @Override
     public void actionPerformed(AnActionEvent event) {
+        showInputDialog(event);
+    }
+
+    private void showInputDialog(AnActionEvent event) {
+
         Project project = event.getData(PlatformDataKeys.PROJECT);
 
         assert project != null;
@@ -51,6 +60,7 @@ public class UrlSchemaGenerator extends AnAction {
             assert packageName != null;
             createGraphQlPackage(project, graphQlUrl, packageName.split("\\."));
         }
+
     }
 
     private String readAndroidPackage(String basePath) {
@@ -136,7 +146,7 @@ public class UrlSchemaGenerator extends AnAction {
                     ProcessBuilder processBuilder = new ProcessBuilder();
                     processBuilder = processBuilder.directory(new File(combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2], "graphql")));
                     processBuilder.command(new String[]{"apollo", "schema:download", "--endpoint", graphQlUrl}).start().waitFor();
-                    project.getBaseDir().refresh(false,true);
+                    project.getBaseDir().refresh(false, true);
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -157,6 +167,11 @@ public class UrlSchemaGenerator extends AnAction {
 
     private void throwDirectoryMissingError(String directoryName) {
         Messages.showErrorDialog(String.format("Unable to find directory %s", directoryName), "Error");
+    }
+
+    @Override
+    public boolean isDumbAware() {
+        return false;
     }
 
     interface PackageCreationCompleteListener {
