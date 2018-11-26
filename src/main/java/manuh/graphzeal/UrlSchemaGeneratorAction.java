@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class UrlSchemaGeneratorAction extends AnAction {
 
-
+//https://api.graph.cool/simple/v1/cjmroit1737n40192oe6p80n5
     public UrlSchemaGeneratorAction() {
         super("Hello");
     }
@@ -135,17 +135,17 @@ public class UrlSchemaGeneratorAction extends AnAction {
 
     private void downloadSchemaJson(Project project, String[] packageName, String graphQlUrl) {
 
-        ProgressManager.getInstance().run(new Task.Backgroundable(project, "Creating packages...") {
+        ProgressManager.getInstance().run(new Task.Backgroundable(project, "Creating Packages...") {
             @Override
             public void run(@NotNull ProgressIndicator progressIndicator) {
                 progressIndicator.setText("Downloading schema.json...");
-                progressIndicator.setText("Downloading schema.json");
                 progressIndicator.setIndeterminate(true);
 
                 try {
                     ProcessBuilder processBuilder = new ProcessBuilder();
                     processBuilder = processBuilder.directory(new File(combineDirectoryPath(project.getBasePath(), "app", "src", "main", "graphql", packageName[0], packageName[1], packageName[2], "graphql")));
                     processBuilder.command(new String[]{"apollo", "schema:download", "--endpoint", graphQlUrl}).start().waitFor();
+                    processBuilder.command(new String[]{"touch", "query.graphql"}).start().waitFor();
                     project.getBaseDir().refresh(false, true);
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
