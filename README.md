@@ -8,6 +8,10 @@ This is a simple Android Studio and Intellij plugin that allows easy setup of [G
 ## Getting Started
 These instructions will help you install the GraphZeal Plugin on your Android Studio or IntelliJ without a sweat!
 
+Go to your Android Studio Preferences or Settings as shown below:
+
+<img src="https://github.com/twigaeng/android-daraja-sdk/blob/master/screenshots/daraja-error-page.png" width="320"/>
+
 ## Contributing
 We are glad you’re interested in GraphZeal, and we’d love to see where you take it. If you would like to contribute code to this project you can do so through GitHub by Forking the Repository and creating a Pull Request.
 
