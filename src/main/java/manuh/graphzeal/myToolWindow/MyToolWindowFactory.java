@@ -1,4 +1,4 @@
-package myToolWindow;
+package manuh.graphzeal.myToolWindow;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;

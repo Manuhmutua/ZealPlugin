@@ -6,12 +6,8 @@ plugins {
 }
 
 apply plugin: 'org.jetbrains.intellij'
-
-intellij {
-    version '15.0.1'
-    pluginName 'GraphZeal'
-    intellij.updateSinceUntilBuild false //Disables updating since-build attribute in plugin.xml
-}
+apply plugin: 'java'
+apply plugin: 'application'
 
 group 'com.manuh'
 version '1.0-SNAPSHOT'
@@ -34,8 +30,13 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
 intellij {
     version '2018.2.4'
+    pluginName 'GraphZeal'
+    plugins 'android'
+    alternativeIdePath '/home/manuh/android-studio'
+    updateSinceUntilBuild false
 }
 
 publishPlugin {

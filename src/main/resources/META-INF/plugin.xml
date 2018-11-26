@@ -1,22 +1,25 @@
 <idea-plugin>
     <id>manuh.graphzeal</id>
     <name>GraphZeal</name>
-    <vendor email="manuh.mutuah@gmail.com">GraphZeal</vendor>
-    <idea-version since-build="94.539"/>
+    <vendor email="manuh.mutuah@gmail.com" url="https://github.com/Manuhmutua/ZealPlugin">GraphZeal</vendor>
+    <idea-version since-build="131"/>
 
     <description><![CDATA[
-    A plugin that makes the appolo graphql usage in android studio easy. Sets up all the folders needed for usage and generates the schema .JSON file<br>
+    A plugin that makes the apollo GraphQl usage in android studio easy. Sets up all the folders needed for usage and generates the schema .JSON file<br>
     <em>made for GraphQL lovers</em>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
+    <depends>org.jetbrains.android</depends>
     <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <defaultProjectTypeProvider type="Android"/>
+
         <toolWindow id="GraphZeal" secondary="true" anchor="right"
-                    factoryClass="myToolWindow.MyToolWindowFactory"/>
+                    factoryClass="manuh.graphzeal.myToolWindow.MyToolWindowFactory"/>
     </extensions>
 
     <actions>
@@ -24,11 +27,11 @@
                popup="true">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
 
-            <action id="Myplugin.Textboxes" class="UrlSchemaGenerator" text="_Enter URL"
+            <action id="GraphZeal" class="manuh.graphzeal.UrlSchemaGeneratorAction" text="_Enter URL"
                     description="Insert GraphQl URL">
-                <keyboard-shortcut first-keystroke="control alt G" second-keystroke="U" keymap="$default"/>
+                <keyboard-shortcut first-keystroke="control alt U" keymap="$default"/>
             </action>
         </group>
-
     </actions>
+
 </idea-plugin>
