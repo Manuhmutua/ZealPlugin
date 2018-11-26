@@ -16,6 +16,14 @@ In an open project, go to `Tools` tab, where you will see the `GraphZeal` option
 
 <img src="https://github.com/Manuhmutua/ZealPlugin/blob/master/screenshots/tools_graphzeal.png"/>
 
+Hit the `Enter URL` option, and you should see this pop up. 
+
+<img src="https://github.com/Manuhmutua/ZealPlugin/blob/master/screenshots/graphzeal_dialog.png"/>
+
+Enter your `GraphQL` endpoint url, and hit ok. GraphZeal will generate the packages and schema for you as shown below:
+
+<img src="https://github.com/Manuhmutua/ZealPlugin/blob/master/screenshots/schema.png"/>
+
 ## Contributing
 We are glad you’re interested in GraphZeal, and we’d love to see where you take it. If you would like to contribute code to this project you can do so through GitHub by Forking the Repository and creating a Pull Request.
 
