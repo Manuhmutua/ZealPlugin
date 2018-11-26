@@ -10,7 +10,7 @@ These instructions will help you install the GraphZeal Plugin on your Android St
 
 Go to your Android Studio Preferences or Settings as shown below:
 
-<img src="https://github.com/twigaeng/android-daraja-sdk/blob/master/screenshots/daraja-error-page.png" width="320"/>
+<img src="https://github.com/Manuhmutua/ZealPlugin/blob/master/screenshots/preferences_search.png" width="320"/>
 
 ## Contributing
 We are glad you’re interested in GraphZeal, and we’d love to see where you take it. If you would like to contribute code to this project you can do so through GitHub by Forking the Repository and creating a Pull Request.
